@@ -1,3 +1,5 @@
+var activePage = "home";
+
 function hide(id) {
   document.getElementById(id).style.display = "none";
 }
@@ -7,19 +9,21 @@ function show(id) {
   page.style.display = "block";
 }
 
-function hideAllPages() {
-  hide("home");
-  hide("skills");
-  hide("languages");
-  hide("projects");
-}
-
 function displayPage(id) {
-  hideAllPages(id);
+  //   hideAllPages(id);
+  hide(activePage);
   show(id);
+  activePage = id;
 }
 
-displayPage("home");
+displayPage(activePage);
+
+// function hideAllPages() {
+//   hide("home");
+//   hide("skills");
+//   hide("languages");
+//   hide("projects");
+// }
 
 // function displayHome() {
 //   hideAllPages();
