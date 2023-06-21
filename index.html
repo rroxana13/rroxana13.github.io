@@ -21,16 +21,16 @@
 
       <ul id="top-menu-bar">
         <li>
-          <a href="#">Home</a>
+          <a href="#" onclick="displayPage('home')">Home</a>
         </li>
         <li>
-          <a href="#">Skills</a>
+          <a href="#" onclick="displayPage('skills');">Skills</a>
         </li>
         <li>
-          <a href="#">Languages</a>
+          <a href="#" onclick="displayPage('languages')">Languages</a>
         </li>
         <li>
-          <a href="#">Projects</a>
+          <a href="#" onclick="displayPage('projects')">Projects</a>
         </li>
       </ul>
     </header>
@@ -58,12 +58,13 @@
         </section>
         <section>Menu 2</section>
       </div>
+
       <div id="main">
-        <div class="page">
+        <div id="home" class="page">
           <p>Welcome to my online CV</p>
         </div>
 
-        <div class="page">
+        <div id="skills" class="page">
           <h2>Skills</h2>
           <ul>
             <li class="favorite">HTML</li>
@@ -72,7 +73,7 @@
           </ul>
         </div>
 
-        <div class="page">
+        <div id="languages" class="page">
           <h2>Known Languages</h2>
           <table>
             <tr>
@@ -86,7 +87,7 @@
           </table>
         </div>
 
-        <div class="page">
+        <div id="projects" class="page">
           <h2>Projects</h2>
           <p>...</p>
         </div>
