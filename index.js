@@ -24,6 +24,22 @@ function displayPage(id) {
 
 displayPage(activePage);
 
+function clickOnMenu(e) {
+  if (e.target.matches("a")) {
+    var id = e.target.dataset.page;
+    // console.info("you clicked on %o menu", id, e.target);
+    if (id) {
+      displayPage(id);
+    } else {
+      console.warn('please use <a data-page="pageid"> ');
+    }
+  }
+}
+
+$("#top-menu-bar").addEventListener("click", clickOnMenu);
+
+// displayPage('skills');
+
 // function hideAllPages() {
 //   hide("home");
 //   hide("skills");
