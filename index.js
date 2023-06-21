@@ -1,15 +1,25 @@
-function hideAllPages() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("skills").style.display = "none";
-  document.getElementById("languages").style.display = "none";
-  document.getElementById("projects").style.display = "none";
+function hide(id) {
+  document.getElementById(id).style.display = "none";
 }
 
-function displayPage(id) {
-  hideAllPages();
+function show(id) {
   var page = document.getElementById(id);
   page.style.display = "block";
 }
+
+function hideAllPages() {
+  hide("home");
+  hide("skills");
+  hide("languages");
+  hide("projects");
+}
+
+function displayPage(id) {
+  hideAllPages(id);
+  show(id);
+}
+
+displayPage("home");
 
 // function displayHome() {
 //   hideAllPages();
@@ -34,5 +44,3 @@ function displayPage(id) {
 //   var page = document.getElementById("projects");
 //   page.style.display = "block";
 // }
-
-displayPage("home");
