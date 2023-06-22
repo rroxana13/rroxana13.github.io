@@ -34,29 +34,33 @@ function clickOnMenu(e) {
   }
 }
 
-function showSkillsList() {
-  //transofrma obiect json din array
-  var skills = [
-    { name: "HTML", favorite: true, endorcements: 10 },
-    { name: "CSS", endorcements: 5 },
-    { name: "JS", favorite: true, endorcements: 13 },
-  ];
-
+function showSkillsList(skills) {
   var ul = $("#skills ul");
-
   skillsHTML = skills.map(function (skill) {
     // console.info("inside map", skill);
 
     // <li class="favorite">HTML</li>
-    var cls = skill.favorite ? "favorite" : "";
+    const cls = skill.favorite ? "favorite" : "";
     return `<li class="${cls}">${skill.name} <span> · ${skill.endorcements} </span> </li>`;
   });
 
   //   console.warn(skillsHTML);
   ul.innerHTML = skillsHTML.join("");
-  console.info(skillsHTML);
+}
+
+function getSkillsRequest() {
+  //fetch ne aduce date de pe server
+  fetch("skills.json").then(function (r) {
+    // console.info("done");
+    r.json().then(function (skills) {
+      showSkillsList(skills);
+      //   console.warn("am sau nu info?", skills);
+    });
+  });
+  //   console.warn("todo get skills");
 }
 
 displayPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
-showSkillsList();
+
+getSkillsRequest();
