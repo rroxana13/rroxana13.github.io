@@ -35,14 +35,18 @@ function clickOnMenu(e) {
 }
 
 function showSkillsList() {
+  var skills = [
+    { name: "HTML", favorite: true },
+    { name: "CSS" },
+    { name: "JS", favorite: true },
+  ];
   var ul = $("#skills ul");
-  var skills = ["HTML", "CSS", "JS"];
 
-  var skillsHTML = skills.map(function (skill) {
+  skillsHTML = skills.map(function (skill) {
     // console.info("inside map", skill);
     // <li class="favorite">HTML</li>
 
-    return `<li>${skill}</li>`;
+    return `<li>${skill.name}</li>`;
   });
   //   console.warn(skillsHTML);
   ul.innerHTML = skillsHTML.join("");
