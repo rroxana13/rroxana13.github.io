@@ -36,7 +36,7 @@ function clickOnMenu(e) {
 
 function showSkillsList(skills) {
   const ul = $("#skills ul");
-  const skillsHTML = skills.map(function (skill) {
+  const skillsHTML = skills.map((skill) => {
     // console.info("inside map", skill);
 
     // <li class="favorite">HTML</li>
@@ -51,7 +51,7 @@ function showSkillsList(skills) {
 
 function getSkillsRequest() {
   //fetch ne aduce date de pe server din fisierul skills.json
-  fetch("skills.json").then(function (r) {
+  fetch("skills.json").then((r) => {
     // console.info("done");
     r.json().then(showSkillsList);
   });
@@ -63,3 +63,15 @@ displayPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
 
 getSkillsRequest();
+
+// function h() {
+//   return "h";
+// }
+
+// const f = function () {
+//   return "f";
+// };
+
+// const a = () => {
+//   return "a";
+// };
