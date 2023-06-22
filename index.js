@@ -35,56 +35,28 @@ function clickOnMenu(e) {
 }
 
 function showSkillsList() {
+  //transofrma obiect json din array
   var skills = [
     { name: "HTML", favorite: true },
     { name: "CSS" },
     { name: "JS", favorite: true },
   ];
+
   var ul = $("#skills ul");
 
   skillsHTML = skills.map(function (skill) {
     // console.info("inside map", skill);
-    // <li class="favorite">HTML</li>
 
-    return `<li>${skill.name}</li>`;
+    // <li class="favorite">HTML</li>
+    var cls = skill.favorite ? "favorite" : "";
+    return `<li class="${cls}">${skill.name}</li>`;
   });
+
   //   console.warn(skillsHTML);
   ul.innerHTML = skillsHTML.join("");
+  console.info(skillsHTML);
 }
 
 displayPage(activePage);
 $("#top-menu-bar").addEventListener("click", clickOnMenu);
 showSkillsList();
-
-// displayPage('skills');
-
-// function hideAllPages() {
-//   hide("home");
-//   hide("skills");
-//   hide("languages");
-//   hide("projects");
-// }
-
-// function displayHome() {
-//   hideAllPages();
-//   var page = document.getElementById("home");
-//   page.style.display = "block";
-// }
-
-// function displaySkills() {
-//   hideAllPages();
-//   var page = document.getElementById("skills");
-//   page.style.display = "block";
-// }
-
-// function displayLanguages() {
-//   hideAllPages();
-//   var page = document.getElementById("languages");
-//   page.style.display = "block";
-// }
-
-// function displayProjects() {
-//   hideAllPages();
-//   var page = document.getElementById("projects");
-//   page.style.display = "block";
-// }
