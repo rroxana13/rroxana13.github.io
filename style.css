@@ -92,6 +92,11 @@ li.favorite {
   color: green;
 }
 
+#skills li span {
+  color: gray;
+  font-weight: 200;
+}
+
 #top-menu-bar {
   margin: 0;
   padding-inline-start: 0;

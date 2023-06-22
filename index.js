@@ -37,9 +37,9 @@ function clickOnMenu(e) {
 function showSkillsList() {
   //transofrma obiect json din array
   var skills = [
-    { name: "HTML", favorite: true },
-    { name: "CSS" },
-    { name: "JS", favorite: true },
+    { name: "HTML", favorite: true, endorcements: 10 },
+    { name: "CSS", endorcements: 5 },
+    { name: "JS", favorite: true, endorcements: 13 },
   ];
 
   var ul = $("#skills ul");
@@ -49,7 +49,7 @@ function showSkillsList() {
 
     // <li class="favorite">HTML</li>
     var cls = skill.favorite ? "favorite" : "";
-    return `<li class="${cls}">${skill.name}</li>`;
+    return `<li class="${cls}">${skill.name} <span> · ${skill.endorcements} </span> </li>`;
   });
 
   //   console.warn(skillsHTML);
