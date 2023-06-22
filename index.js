@@ -22,18 +22,6 @@ function displayPage(id) {
   $(`#top-menu-bar a[data-page="${id}"]`).classList.add("active");
 }
 
-function clickOnMenu(e) {
-  if (e.target.matches("a")) {
-    const id = e.target.dataset.page;
-    // console.info("you clicked on %o menu", id, e.target);
-    if (id) {
-      displayPage(id);
-    } else {
-      console.warn('please use <a data-page="pageid"> ');
-    }
-  }
-}
-
 function showSkillsList(skills) {
   const ul = $("#skills ul");
 
@@ -55,9 +43,24 @@ function getSkillsRequest() {
     .then(showSkillsList);
 }
 
-displayPage(activePage);
-$("#top-menu-bar").addEventListener("click", clickOnMenu);
+function initEvents() {
+  function clickOnMenu(e) {
+    if (e.target.matches("a")) {
+      const id = e.target.dataset.page;
+      // console.info("you clicked on %o menu", id, e.target);
+      if (id) {
+        displayPage(id);
+      } else {
+        console.warn('please use <a data-page="pageid"> ');
+      }
+    }
+  }
 
+  $("#top-menu-bar").addEventListener("click", clickOnMenu);
+}
+
+displayPage(activePage);
+initEvents();
 getSkillsRequest();
 
 // function h() {
