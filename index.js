@@ -1,11 +1,11 @@
-var activePage = "skills";
+let activePage = "skills";
 
 function hide(id) {
   $("#" + id).style.display = "none";
 }
 
 function show(id) {
-  var page = $(`#${id}`);
+  const page = $(`#${id}`);
   page.style.display = "block";
 }
 
@@ -24,7 +24,7 @@ function displayPage(id) {
 
 function clickOnMenu(e) {
   if (e.target.matches("a")) {
-    var id = e.target.dataset.page;
+    const id = e.target.dataset.page;
     // console.info("you clicked on %o menu", id, e.target);
     if (id) {
       displayPage(id);
@@ -35,8 +35,8 @@ function clickOnMenu(e) {
 }
 
 function showSkillsList(skills) {
-  var ul = $("#skills ul");
-  var skillsHTML = skills.map(function (skill) {
+  const ul = $("#skills ul");
+  const skillsHTML = skills.map(function (skill) {
     // console.info("inside map", skill);
 
     // <li class="favorite">HTML</li>
@@ -45,6 +45,7 @@ function showSkillsList(skills) {
   });
 
   //   console.warn(skillsHTML);
+  skillsHTML.push("<li>...</li>");
   ul.innerHTML = skillsHTML.join("");
 }
 
