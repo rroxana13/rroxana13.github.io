@@ -159,3 +159,19 @@ footer a {
 footer a:hover {
   background-color: #0798ab;
 }
+
+#languages table {
+  width: 50%;
+  min-width: 330px;
+  border-collapse: collapse;
+}
+
+#languages table th,
+#languages table td {
+  border: 1px solid #0798ab;
+  padding: 5px;
+}
+
+th {
+  background: #d1e7ea;
+}
